@@ -1,2 +1,1 @@
-web: gunicorn hyper.wsgi:application
-worker: python worker.py
+web: gunicorn hyper.wsgi
