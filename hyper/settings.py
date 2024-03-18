@@ -85,23 +85,9 @@ WSGI_APPLICATION = 'hyper.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
-    # }
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': 'hypercrates',  # Change to your database name
-    #     'USER': 'admin',  # Change to your database username
-    #     'PASSWORD': 'admin',  # Change to your database password
-    #     'HOST': 'db',  # This should match the name of the database service in Docker Compose
-    #     'PORT': '5432',
-    # }
     'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
 }
 
-# STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-# STATICFILES_STORAGE='whitenoise.django.GzipManifestStaticFilesStorage'
 
 
 # Password validation
