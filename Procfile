@@ -1,1 +1,2 @@
-web: gunicorn hyper.wsgi:application --bind 0.0.0.0:8000
+web: gunicorn hyper.wsgi:application
+worker: python worker.py
