@@ -24,5 +24,5 @@ router = routers.DefaultRouter()
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
-    path('', SwaggerSchemaView.as_view(), name='swagger_schema'),
+    path('', SwaggerSchemaView.as_view({'get':'list'}), name='swagger_schema'),
 ]
