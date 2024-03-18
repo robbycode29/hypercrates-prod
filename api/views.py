@@ -132,3 +132,135 @@ class DoctorsPatientsReportView(viewsets.ReadOnlyModelViewSet):
             'doctors': response.data
         }
         return Response(data)
+
+## Swagger file for the API
+class SwaggerSchemaView(viewsets.ViewSet):
+
+    def list(self, request):
+        schema = {
+            "openapi": "3.0.0",
+            "info": {
+                "title": "Healthcare API",
+                "version": "1.0.0",
+                "description": "API for managing doctors, patients, assistants and treatments"
+            },
+            "paths": {
+                "/doctors/": {
+                    "get": {
+                        "summary": "List all doctors",
+                        "operationId": "listDoctors",
+                        "responses": {
+                            "200": {
+                                "description": "List of doctors"
+                            }
+                        }
+                    },
+                    "post": {
+                        "summary": "Create a new doctor",
+                        "operationId": "createDoctor",
+                        "requestBody": {
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "type": "object",
+                                        "properties": {
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "email": {
+                                                "type": "string",
+                                                "format": "email"
+                                            }
+                                        },
+                                        "required": ["name", "email"]
+                                    }
+                                }
+                            }
+                        },
+                        "responses": {
+                            "201": {
+                                "description": "Doctor created"
+                            }
+                        }
+                    }
+                },
+                "/doctors/{doctor_id}/patients/{patient_id}/treatments/": {
+                    "get": {
+                        "summary": "List all treatments for a patient",
+                        "operationId": "listTreatments",
+                        "responses": {
+                            "200": {
+                                "description": "List of treatments"
+                            }
+                        }
+                    }
+                },
+                "/patients/{patient_id}/assistants/": {
+                    "put": {
+                        "summary": "Assign assistants to a patient",
+                        "operationId": "assignAssistants",
+                        "requestBody": {
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "type": "object",
+                                        "properties": {
+                                            "assistants": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "integer"
+                                                }
+                                            }
+                                        },
+                                        "required": ["assistants"]
+                                    }
+                                }
+                            }
+                        },
+                        "responses": {
+                            "200": {
+                                "description": "Patient updated"
+                            }
+                        }
+                    }
+                },
+                "/treatments/{treatment_id}/assistant/": {
+                    "put": {
+                        "summary": "Assign assistant to a treatment",
+                        "operationId": "assignAssistant",
+                        "requestBody": {
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "type": "object",
+                                        "properties": {
+                                            "assistant": {
+                                                "type": "integer"
+                                            }
+                                        },
+                                        "required": ["assistant"]
+                                    }
+                                }
+                            }
+                        },
+                        "responses": {
+                            "200": {
+                                "description": "Treatment updated"
+                            }
+                        }
+                    }
+                },
+                "/report/": {
+                    "get": {
+                        "summary": "Report of doctors and patients",
+                        "operationId": "report",
+                        "responses": {
+                            "200": {
+                                "description": "Report"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return Response(schema)
