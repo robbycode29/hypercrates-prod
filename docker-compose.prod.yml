@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_DB: hypercrates
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: gunicorn hyper.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db

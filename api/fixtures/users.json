@@ -1,0 +1,70 @@
+[
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "username": "gm_user",
+            "password": "pbkdf2_sha256$600000$aa6P4QeNiDO5Uks7VC8dtH$gdQeE4P9Itd4AZFLsi9AVrBxbr8yFZaIoMLwQpTBHAI=",
+            "groups": [1]
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 2,
+        "fields": {
+            "username": "doctor_user",
+            "password": "pbkdf2_sha256$600000$nc513OzSAv9X4zF8s9rqJm$Wbs+NstUGd2R+/XquHqu/1NVCBtKbZQuF4shbZWiVwc=",
+            "groups": [2]
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 3,
+        "fields": {
+            "username": "assistant_user",
+            "password": "pbkdf2_sha256$600000$T7rLsVGdGn9CYr8xZOmQmw$miH7MLt2cCWcvM/rj6ROsUnCAlJxPrytPElWovx1g0I=",
+            "groups": [3]
+        }
+    },
+    {
+        "model": "auth.group",
+        "pk": 1,
+        "fields": {
+            "name": "General Manager",
+            "permissions": []
+        }
+    },
+    {
+        "model": "auth.group",
+        "pk": 2,
+        "fields": {
+            "name": "Doctor",
+            "permissions": []
+        }
+    },
+    {
+        "model": "auth.group",
+        "pk": 3,
+        "fields": {
+            "name": "Assistant",
+            "permissions": []
+        }
+    },
+    {
+        "model": "api.doctor",
+        "pk": 1,
+        "fields": {
+            "name": "Helen Smith",
+            "specialization": "Cardiology",
+            "user": 2
+        }
+    },
+    {
+        "model": "api.assistant",
+        "pk": 1,
+        "fields": {
+            "name": "Joshua Rodriguez",
+            "user": 3
+        }
+    }
+]

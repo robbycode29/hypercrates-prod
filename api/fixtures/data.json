@@ -1,0 +1,261 @@
+[
+    {
+        "model": "auth.user",
+        "pk": 4,
+        "fields": {
+            "username": "doctor_jessica",
+            "password": "pbkdf2_sha256$600000$VHJXpM1Bvw6C$...",
+            "groups": [2]
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 5,
+        "fields": {
+            "username": "assistant_michael",
+            "password": "pbkdf2_sha256$600000$VHJXpM1Bvw6C$...",
+            "groups": [3]
+        }
+    },
+    {
+        "model": "api.doctor",
+        "pk": 2,
+        "fields": {
+            "name": "Jessica Johnson",
+            "specialization": "Neurology",
+            "user": 4
+        }
+    },
+    {
+        "model": "api.assistant",
+        "pk": 2,
+        "fields": {
+            "name": "Michael Brown",
+            "user": 5
+        }
+    },
+    {
+        "model": "api.patient",
+        "pk": 1,
+        "fields": {
+            "name": "John Doe",
+            "doctor": 2,
+            "age": 35,
+            "assistants": [1, 2]
+        }
+    },
+    {
+        "model": "api.patient",
+        "pk": 2,
+        "fields": {
+            "name": "Jane Smith",
+            "doctor": 2,
+            "age": 45,
+            "assistants": [1]
+        }
+    },
+    {
+        "model": "api.treatment",
+        "pk": 1,
+        "fields": {
+            "name": "Physical Therapy",
+            "description": "A series of exercises to improve strength and mobility",
+            "patient": 1
+        }
+    },
+    {
+        "model": "api.treatment",
+        "pk": 2,
+        "fields": {
+            "name": "Cognitive Behavioral Therapy",
+            "description": "A form of talk therapy designed to help patients manage their problems by changing the way they think and behave",
+            "patient": 2
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 6,
+        "fields": {
+            "username": "doctor_robert",
+            "password": "pbkdf2_sha256$600000$VHJXpM1Bvw6C$...",
+            "groups": [2]
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 7,
+        "fields": {
+            "username": "assistant_sarah",
+            "password": "pbkdf2_sha256$600000$VHJXpM1Bvw6C$...",
+            "groups": [3]
+        }
+    },
+    {
+        "model": "api.doctor",
+        "pk": 3,
+        "fields": {
+            "name": "Robert Johnson",
+            "specialization": "Pediatrics",
+            "user": 6
+        }
+    },
+    {
+        "model": "api.assistant",
+        "pk": 3,
+        "fields": {
+            "name": "Sarah Brown",
+            "user": 7
+        }
+    },
+    {
+        "model": "api.patient",
+        "pk": 3,
+        "fields": {
+            "name": "Emily Davis",
+            "doctor": 3,
+            "age": 26,
+            "assistants": [1, 3]
+        }
+    },
+    {
+        "model": "api.patient",
+        "pk": 4,
+        "fields": {
+            "name": "James Miller",
+            "doctor": 3,
+            "age": 32,
+            "assistants": [2]
+        }
+    },
+    {
+        "model": "api.treatment",
+        "pk": 3,
+        "fields": {
+            "name": "Chemotherapy",
+            "description": "A type of cancer treatment that uses drugs to kill cancer cells",
+            "patient": 3
+        }
+    },
+    {
+        "model": "api.treatment",
+        "pk": 4,
+        "fields": {
+            "name": "Radiation Therapy",
+            "description": "The use of high-energy radiation to shrink tumors and kill cancer cells",
+            "patient": 4
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 8,
+        "fields": {
+            "username": "doctor_amy",
+            "password": "pbkdf2_sha256$600000$VHJXpM1Bvw6C$...",
+            "groups": [2]
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 9,
+        "fields": {
+            "username": "assistant_john",
+            "password": "pbkdf2_sha256$600000$VHJXpM1Bvw6C$...",
+            "groups": [3]
+        }
+    },
+    {
+        "model": "api.doctor",
+        "pk": 4,
+        "fields": {
+            "name": "Amy Williams",
+            "specialization": "Cardiology",
+            "user": 8
+        }
+    },
+    {
+        "model": "api.assistant",
+        "pk": 4,
+        "fields": {
+            "name": "John Taylor",
+            "user": 9
+        }
+    },
+    {
+        "model": "api.patient",
+        "pk": 5,
+        "fields": {
+            "name": "Laura Wilson",
+            "doctor": 1,
+            "age": 40,
+            "assistants": [1, 4]
+        }
+    },
+    {
+        "model": "api.patient",
+        "pk": 6,
+        "fields": {
+            "name": "Richard Moore",
+            "doctor": 4,
+            "age": 55,
+            "assistants": [2]
+        }
+    },
+    {
+        "model": "api.treatment",
+        "pk": 5,
+        "fields": {
+            "name": "Heart Surgery",
+            "description": "A surgical procedure to correct problems with the heart",
+            "patient": 5
+        }
+    },
+    {
+        "model": "api.treatment",
+        "pk": 6,
+        "fields": {
+            "name": "Physical Rehabilitation",
+            "description": "A process aimed at improving ability to function after injury or illness",
+            "patient": 6
+        }
+    },
+    {
+        "model": "api.patient",
+        "pk": 7,
+        "fields": {
+            "name": "Emma Thomas",
+            "doctor": 2,
+            "age": 45,
+            "assistants": [1]
+        }
+    },
+    {
+        "model": "api.patient",
+        "pk": 8,
+        "fields": {
+            "name": "Oliver Jackson",
+            "doctor": 3,
+            "age": 50,
+            "assistants": [2]
+        }
+    },
+    {
+        "model": "api.patient",
+        "pk": 9,
+        "fields": {
+            "name": "Sophia White",
+            "doctor": 4,
+            "age": 60,
+            "assistants": [1]
+        }
+    },
+    {
+        "model": "api.patient",
+        "pk": 10,
+        "fields": {
+            "name": "Liam Harris",
+            "doctor": 2,
+            "age": 70,
+            "assistants": [2]
+        }
+    }
+]
