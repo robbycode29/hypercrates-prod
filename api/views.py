@@ -136,7 +136,7 @@ class DoctorsPatientsReportView(viewsets.ReadOnlyModelViewSet):
 ## Swagger page
 class SwaggerSchemaView(viewsets.ViewSet):
     def list(self, request):
-        with open('swagger.json') as f:
+        with open('api/swagger.json') as f:
             schema = json.load(f)
 
         return Response(schema)
