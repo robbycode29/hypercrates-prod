@@ -1,5 +1,0 @@
-build:
-  docker:
-    web: Dockerfile.prod
-run:
-  web: gunicorn hyper.wsgi:application --bind 0.0.0.0:$PORT
